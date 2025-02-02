@@ -1,0 +1,142 @@
+.img-dimensions{
+    width: 180px;
+    height: 180px;
+   
+   }
+   .product-item{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+   }
+/* Cart container */
+.cart-container {
+    padding: 20px;
+  }
+  
+  /* Responsive table */
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  thead th {
+    background-color: #f8f9fa;
+    text-align: center;
+  }
+  
+  tbody td {
+    text-align: center;
+  }
+  
+  /* Item info with image */
+  .item-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .cart-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  /* Quantity buttons */
+  .quantity-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .quantity {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+  }
+  
+  /* Total price */
+  .total-price {
+    text-align: right;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .cart-img {
+      width: 60px;
+      height: 60px;
+    }
+  
+    .quantity-controls button {
+      padding: 5px 10px;
+    }
+  
+    thead {
+      display: none; /* Hide table headers on small screens */
+    }
+  
+    tbody tr {
+      display: block;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      padding: 10px;
+    }
+  
+    tbody td {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      padding: 5px 10px;
+    }
+  
+    .total-price {
+      text-align: center;
+    }
+  }
+  
+
+@media only screen and (max-width:1024px){
+    .img-dimensions{
+        width: 150px;
+        height: 150px;
+       }
+       .product-item{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+       }
+}
+@media only screen and (max-width:700px){
+    .product-item{
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     /* gap: 15px; */
+    }
+ }
+
+@media only screen and (max-width:600px){
+   .product-item{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* gap: 15px; */
+   }
+}
+@media only screen and (max-width:300px){
+    .product-item{
+     display: grid;
+     grid-template-columns: repeat(1, 1fr);
+     /* gap: 15px; */
+    }
+ }

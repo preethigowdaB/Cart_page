@@ -14,7 +14,9 @@ function App() {
       const existingItem = prevCart.find((cartItem) => cartItem.id === item.id);
       if (existingItem) {
         return prevCart.map((cartItem) =>
-          cartItem.id === item.id ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem
+          cartItem.id === item.id
+            ? { ...cartItem, quantity: cartItem.quantity + 1 }
+            : cartItem
         );
       }
       return [...prevCart, { ...item, quantity: 1 }];
@@ -27,7 +29,9 @@ function App() {
       const existingItem = prevCart.find((cartItem) => cartItem.id === itemId);
       if (existingItem.quantity > 1) {
         return prevCart.map((cartItem) =>
-          cartItem.id === itemId ? { ...cartItem, quantity: cartItem.quantity - 1 } : cartItem
+          cartItem.id === itemId
+            ? { ...cartItem, quantity: cartItem.quantity - 1 }
+            : cartItem
         );
       }
       return prevCart.filter((cartItem) => cartItem.id !== itemId);
@@ -44,8 +48,11 @@ function App() {
     <div className="App">
       <nav className="container">
         <div className="d-flex justify-content-between">
-          <h4 onClick={() => setShow(false)}>Products</h4>
-          <div style={{ position: "relative", cursor: "pointer" }} onClick={() => setShow(true)}>
+          <h4 onClick={() => setShow(false)} style={{cursor:"pointer"}}>Products</h4>
+          <div
+            style={{ position: "relative", cursor: "pointer" }}
+            onClick={() => setShow(true)}
+          >
             <img src={CartIcon} alt="Cart" width={30} />
             {cart.length > 0 && (
               <sup
@@ -67,9 +74,17 @@ function App() {
 
       <div>
         {show ? (
-          <CartPage cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} />
+          <CartPage
+            cart={cart}
+            addToCart={addToCart}
+            removeFromCart={removeFromCart}
+          />
         ) : (
-          <ProductList addToCart={addToCart} addedItems={addedItems} setShow={setShow} />
+          <ProductList
+            addToCart={addToCart}
+            addedItems={addedItems}
+            setShow={setShow}
+          />
         )}
       </div>
     </div>
